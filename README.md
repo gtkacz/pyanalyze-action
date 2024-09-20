@@ -61,20 +61,19 @@ jobs:
 
 Replace `gtkacz/pyanalyze-action@v1` with the correct repository and version tag for this action.
 
-## Notes
-
-- **Python Version**: This action sets up Python 3.12 by default. Ensure your code is compatible with Python 3.12 or adjust the `python-version` in the action if needed.
-- **pyanalyze Documentation**: For more information on pyanalyze and its options, visit the [pyanalyze GitHub repository](https://github.com/quora/pyanalyze).
-- **Action Permissions**: Ensure that the action has the necessary permissions to read your codebase.
-
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a pull request or create an issue.
+Contributions to improve this GitHub Action are welcome! Please feel free to submit issues or pull requests.
+
+## License
+
+This project is licensed under the GNU General Public License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgements
+
+- This action uses [pyanalyze](https://github.com/quora/pyanalyze), created by Quora.
+- Thanks to the GitHub Actions team for providing the platform and documentation.
 
 ## Support
 
 If you encounter any problems or have any questions, please open an issue in this repository.
-
-## License
-
-This project is licensed under the terms of the MIT license.
