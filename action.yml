@@ -1,0 +1,34 @@
+name: "pyanalyze GitHub Action"
+description: "A GitHub Action of pyanalyze, a tool for type-checking Python code."
+author: "Gabriel Mitelman Tkacz"
+inputs:
+  src:
+    description: "Source to run pyanalyze. Default: '.'"
+    required: false
+    default: "."
+  args:
+    description: "Arguments passed to pyanalyze. Use `pyanalyze --help` to see available options."
+    required: false
+  version:
+    description: 'The version of pyanalyze to use, e.g. "==0.33.1"'
+    required: false
+    default: ""
+runs:
+  using: "composite"
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.12"
+
+    - name: Install pyanalyze
+      shell: bash
+      run: pip install pyanalyze${{ inputs.version }}
+
+    - name: Run pyanalyze
+      shell: bash
+      run: pyanalyze ${{ inputs.src }} ${{ inputs.args }}
+
+branding:
+  icon: "bell"
+  color: "gray-dark"
