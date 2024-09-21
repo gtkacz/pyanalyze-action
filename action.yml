@@ -16,14 +16,14 @@ inputs:
 runs:
   using: "composite"
   steps:
-    - name: Set up Python
-      uses: actions/setup-python@v5
+    - name: Setup Python
+      uses: astral-sh/setup-uv@v3
       with:
-        python-version: "3.12"
+        version: "latest"
 
     - name: Install pyanalyze
       shell: bash
-      run: pip install pyanalyze${{ inputs.version }}
+      run: uv pip install pyanalyze${{ inputs.version }}
 
     - name: Run pyanalyze
       shell: bash
